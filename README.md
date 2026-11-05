@@ -1,29 +1,37 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ishankpandey7/ishankpandey7/main/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ishankpandey7/ishankpandey7/main/banner-light.svg">
-  <img alt="Ishank — curious by nature, hands-on by choice. Research and engineering." src="https://raw.githubusercontent.com/ishankpandey7/ishankpandey7/main/banner-light.svg" width="100%">
-</picture>
+# Ishank's Universe — interactive 3D portfolio
 
-### Hello, I'm Ishank.
+This combines the Personal Universe artwork with Mission Control typography, fine diagram lines, restrained copper accents, and clear project descriptions.
 
-I build practical tools and explore the ideas behind them. My work ranges from drone telemetry and desktop assistants to interactive worlds — with a growing interest in quantum computing and security.
+## Run
 
-I like a good question, a small working prototype, and evidence that tells me what to improve next.
+Open **portfolio.html** directly in a modern browser. This standalone file embeds the code, styles and illustrated fallback. The complete folder also works by opening `index.html`, or running `python3 -m http.server 8080` from this directory. No package installation is needed to use the delivered build. Outbound links open GitHub or the existing drone demo.
 
-### Selected work
+## Interaction
 
-| Project | What I'm exploring |
-| :--- | :--- |
-| **[Drone Flight Safety Monitor](https://github.com/ishankpandey7/drone-flight-safety-monitor)**<br><sub>RESEARCH · PYTHON · TELEMETRY</sub> | How early can telemetry reveal a failing drone? A study of anomaly detection, warning time, and evaluation on flight logs. [Explore the demo](https://drone-flight-safety-monitor.vercel.app) |
-| **[MyVerse](https://github.com/ishankpandey7/myverse)**<br><sub>CREATIVE SOFTWARE · TYPESCRIPT · THREE.JS</sub> | A personal world where ideas become missions and progress brings an island to life. An exploration of interaction, 3D environments, and local persistence. |
-| **[JARVIS](https://github.com/ishankpandey7/jarvis-voice-assistant)**<br><sub>TOOLS · PYTHON · AUTOMATION</sub> | A Windows voice assistant for everyday work: opening apps, finding files, and setting reminders. Built around useful actions and explicit user control. |
+- Click or tap a place: the character walks there, then its project panel opens. Click a walkway to move without opening a panel.
+- Drag to orbit. Right-drag or two-finger drag pans the camera. Pinch, scroll or use the camera controls to zoom; the crosshair resets the view.
+- WASD or arrow keys walk relative to the camera. E opens a nearby destination. Movement is constrained to the islands and bridges, with building obstacles and pathfinding.
+- Use Projects to reach all content without navigating the illustration.
+- Keyboard: Tab and Enter activate places, Home resets the camera, Escape closes panels.
+- Layout supports small screens, reduced-motion preferences, keyboard focus, and native modal dialogs.
 
-### On my workbench
+This is a real Three.js scene with a walking character, procedural low-poly buildings, a drone, plants and floating islands. It has no accounts, analytics, persistence or physics engine. Reduced-motion mode skips travel transitions; WebGL2 failure falls back to an illustrated map. The fallback artwork is AI-generated. The actual GitHub profile has not been changed.
 
-**Machine learning** &nbsp; / &nbsp; **Quantum computing** &nbsp; / &nbsp; **Security** &nbsp; / &nbsp; **Interfaces worth using**
+## Source and rebuild
 
-Working with Python, TypeScript, React, and Three.js. Learning through experiments, building in small steps, and documenting what holds up.
+`world3d.js` contains the scene and movement. `app.js` contains the accessible interface. Three.js 0.180.0 and OrbitControls are vendored locally under `vendor/three`, including the MIT license. `world3d.bundle.js` is the browser-ready bundle.
 
----
+After changing 3D source, rebuild with:
 
-<sub>[Explore my repositories](https://github.com/ishankpandey7?tab=repositories) &nbsp; · &nbsp; Questions and thoughtful feedback are welcome in the relevant project's issues.</sub>
+```sh
+npm exec --yes --package=esbuild@0.25.10 -- esbuild world3d.js --bundle --format=iife --alias:three=./vendor/three/three.module.js --minify --outfile=world3d.bundle.js
+python3 package_standalone.py
+```
+
+`qa.py` checks actual browser interactions and writes screenshots. It uses Playwright with Chromium's software renderer. Physical mobile GPU performance and touch ergonomics remain unverified. This prototype does not include MyVerse's mission tracking, saves, inventories or accounts.
+
+## GitHub and publication
+
+GitHub READMEs cannot execute this site's JavaScript. The intended integration is a static illustrated banner on the profile linking to this separate portfolio. Hosting is not yet configured. The site can be published to a static host, such as GitHub Pages or Vercel, when authorized. Repository-relative paths support a GitHub Pages project subdirectory.
+
+The portfolio features public projects only. The observatory presents research interests without publishing private repository contents or results.
