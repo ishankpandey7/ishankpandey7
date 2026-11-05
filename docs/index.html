@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071523">
+  <meta name="description" content="Explore Ishank's projects: flight telemetry, practical tools, interactive worlds, and research interests.">
+  <title>Ishank's Universe — Research & Engineering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#places">Skip to projects</a>
+  <main class="experience">
+    <div id="world" class="world" aria-label="Illustrated project world. Drag the scenery to pan; use the camera buttons to zoom.">
+      <div id="plane" class="world-plane">
+        <img class="world-art" src="assets/world.png" alt="A floating world with a brass observatory, a warm engineering workshop, a drone flight deck and a garden, connected by bridges beneath the stars." draggable="false">
+        <svg class="route-lines" viewBox="0 0 1600 900" aria-hidden="true"><path d="M352 440 Q580 300 815 440 T1265 480 M815 440 Q960 650 785 680"/><circle cx="352" cy="440" r="7"/><circle cx="815" cy="440" r="7"/><circle cx="1265" cy="480" r="7"/></svg>
+        <div id="places" class="places" role="group" aria-label="Explore the four places">
+          <button class="place observatory" data-place="observatory"><span class="beacon" aria-hidden="true">✦</span><span class="place-label"><small>01 / RESEARCH</small><strong>Observatory</strong></span></button>
+          <button class="place workshop" data-place="workshop"><span class="beacon" aria-hidden="true">⌘</span><span class="place-label"><small>02 / TOOLS</small><strong>Workshop</strong></span></button>
+          <button class="place flight" data-place="flight"><span class="beacon" aria-hidden="true">&rsaquo;</span><span class="place-label"><small>03 / TELEMETRY</small><strong>Flight deck</strong></span></button>
+          <button class="place garden" data-place="garden"><span class="beacon" aria-hidden="true">✳</span><span class="place-label"><small>04 / CREATIVE SOFTWARE</small><strong>Idea garden</strong></span></button>
+        </div>
+      </div>
+    </div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Ishank's Universe home"><span class="brand-mark">i.</span><span>ISHANK<span class="brand-sub">RESEARCH & ENGINEERING</span></span></a>
+      <div class="header-links"><button id="about" class="text-button">About this explorer</button><a class="github-link" href="https://github.com/ishankpandey7" target="_blank" rel="noopener noreferrer">GitHub <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9"/></svg></a></div>
+    </header>
+    <section class="intro" aria-labelledby="headline">
+      <p class="eyebrow"><span></span> A PERSONAL UNIVERSE</p>
+      <h1 id="headline">Built with curiosity.<br><em>Grounded in evidence.</em></h1>
+      <p class="intro-copy">A place for practical tools, open questions,<br class="desktop-break"> and ideas worth bringing to life.</p>
+    </section>
+    <aside class="map-caption" aria-hidden="true"><span>FIELD NOTES</span><div></div><span>AN EXPLORABLE PORTFOLIO</span></aside>
+    <div class="bottom-ui">
+      <nav class="dock" aria-label="Portfolio navigation"><button id="explore" class="active"><span>01</span> Explore</button><button id="projects"><span>02</span> Projects</button><button id="about-bottom"><span>03</span> About</button></nav>
+      <p class="hint">Choose a place. Follow a question.<span id="movement-hint">Loading the 3D world…</span></p>
+      <div class="camera" role="group" aria-label="Camera controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-label" aria-live="polite">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="reset" aria-label="Reset camera" title="Reset camera">⌖</button><button id="help" aria-label="Camera and keyboard help">?</button></div>
+    </div>
+    <p id="announcement" class="sr-only" role="status"></p>
+    <noscript><div class="nojs">Explore the projects on <a href="https://github.com/ishankpandey7">GitHub</a>. Camera movement needs JavaScript.</div></noscript>
+  </main>
+  <dialog id="inspector" aria-labelledby="panel-title">
+    <button id="close-panel" class="close" aria-label="Close panel">×</button>
+    <div id="panel-content"></div>
+  </dialog>
+  <script src="app.js"></script>
+  <script src="world3d.bundle.js"></script>
+</body>
+</html>
