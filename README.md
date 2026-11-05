@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img alt="Ishank — curious by nature, hands-on by choice. Research and engineering." src="assets/banner-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="banner-light.svg">
+  <img alt="Ishank — curious by nature, hands-on by choice. Research and engineering." src="banner-light.svg" width="100%">
 </picture>
 
 ### Hello, I'm Ishank.
