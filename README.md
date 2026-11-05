@@ -1,37 +1,27 @@
-# Ishank's Universe — interactive 3D portfolio
+<a href="https://ishankpandey7.github.io/ishankpandey7/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="banner-light.svg">
+    <img alt="Ishank — Curious by nature. Hands-on by choice." src="banner-dark.svg" width="100%">
+  </picture>
+</a>
 
-This combines the Personal Universe artwork with Mission Control typography, fine diagram lines, restrained copper accents, and clear project descriptions.
+<p align="center">
+  <a href="https://ishankpandey7.github.io/ishankpandey7/"><b>🪐 Explore my interactive 3D universe →</b></a>
+</p>
 
-## Run
+Hi, I'm Ishank. I build practical tools, run experiments, and follow questions across machine learning, quantum computing and security.
 
-Open **portfolio.html** directly in a modern browser. This standalone file embeds the code, styles and illustrated fallback. The complete folder also works by opening `index.html`, or running `python3 -m http.server 8080` from this directory. No package installation is needed to use the delivered build. Outbound links open GitHub or the existing drone demo.
+The link above opens a small 3D world: walk between the observatory, workshop, flight deck and idea garden to find my projects.
 
-## Interaction
+### Projects
 
-- Click or tap a place: the character walks there, then its project panel opens. Click a walkway to move without opening a panel.
-- Drag to orbit. Right-drag or two-finger drag pans the camera. Pinch, scroll or use the camera controls to zoom; the crosshair resets the view.
-- WASD or arrow keys walk relative to the camera. E opens a nearby destination. Movement is constrained to the islands and bridges, with building obstacles and pathfinding.
-- Use Projects to reach all content without navigating the illustration.
-- Keyboard: Tab and Enter activate places, Home resets the camera, Escape closes panels.
-- Layout supports small screens, reduced-motion preferences, keyboard focus, and native modal dialogs.
+| | Project | What it is |
+|---|---|---|
+| 🛩️ | [Drone Flight Safety Monitor](https://github.com/ishankpandey7/drone-flight-safety-monitor) · [demo](https://drone-flight-safety-monitor.vercel.app) | Spotting early signs of motor, battery and sensor problems in flight telemetry |
+| 🎙️ | [JARVIS](https://github.com/ishankpandey7/jarvis-voice-assistant) | A Python voice assistant for everyday tasks on a Windows laptop |
+| 🌱 | [MyVerse](https://github.com/ishankpandey7/myverse) | A personal 3D world where saved ideas become missions |
 
-This is a real Three.js scene with a walking character, procedural low-poly buildings, a drone, plants and floating islands. It has no accounts, analytics, persistence or physics engine. Reduced-motion mode skips travel transitions; WebGL2 failure falls back to an illustrated map. The fallback artwork is AI-generated. The actual GitHub profile has not been changed.
+More: [Idea Refinery](https://github.com/ishankpandey7/idea-refinary) · [Marrow](https://github.com/ishankpandey7/marrow) · [all repositories](https://github.com/ishankpandey7?tab=repositories)
 
-## Source and rebuild
-
-`world3d.js` contains the scene and movement. `app.js` contains the accessible interface. Three.js 0.180.0 and OrbitControls are vendored locally under `vendor/three`, including the MIT license. `world3d.bundle.js` is the browser-ready bundle.
-
-After changing 3D source, rebuild with:
-
-```sh
-npm exec --yes --package=esbuild@0.25.10 -- esbuild world3d.js --bundle --format=iife --alias:three=./vendor/three/three.module.js --minify --outfile=world3d.bundle.js
-python3 package_standalone.py
-```
-
-`qa.py` checks actual browser interactions and writes screenshots. It uses Playwright with Chromium's software renderer. Physical mobile GPU performance and touch ergonomics remain unverified. This prototype does not include MyVerse's mission tracking, saves, inventories or accounts.
-
-## GitHub and publication
-
-GitHub READMEs cannot execute this site's JavaScript. The intended integration is a static illustrated banner on the profile linking to this separate portfolio. Hosting is not yet configured. The site can be published to a static host, such as GitHub Pages or Vercel, when authorized. Repository-relative paths support a GitHub Pages project subdirectory.
-
-The portfolio features public projects only. The observatory presents research interests without publishing private repository contents or results.
+<sub>The 3D site's source lives in <a href="docs/">docs/</a>.</sub>
